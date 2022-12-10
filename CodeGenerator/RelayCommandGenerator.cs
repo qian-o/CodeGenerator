@@ -71,7 +71,13 @@ namespace SourceGenerator
 
         public void Execute(object parameter = null)
         {
-            _execute?.Invoke((T)parameter);
+            T param = default;
+            if (parameter is T)
+            {
+                param = (T)parameter;
+            }
+            
+            _execute?.Invoke(param);
         }
     }
 }
