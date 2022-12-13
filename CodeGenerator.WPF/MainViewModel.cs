@@ -29,7 +29,7 @@ namespace CodeGenerator.WPF
         private void ChangedData()
         {
             Username = "王熙";
-            Code = "123456789011";
+            Code = "123456789011123";
         }
     }
 }
