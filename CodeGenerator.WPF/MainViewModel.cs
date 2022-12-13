@@ -28,7 +28,7 @@ namespace CodeGenerator.WPF
         [RelayCommand]
         private void ChangedData()
         {
-            Username = "王熙";
+            Username = "王熙123123撒地方啊撒打发";
             Code = "123456789011123";
         }
     }
