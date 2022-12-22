@@ -22,7 +22,7 @@ namespace CodeGenerator.WPF
         {
             main.WindowState = WindowState.Maximized;
 
-            Username = "测试一威威";
+            Username = "测试";
         }
 
         [RelayCommand]
