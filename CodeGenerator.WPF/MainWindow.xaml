@@ -33,6 +33,8 @@
             <Run Text="{Binding Code}" />
             <Run Text="{Binding Code}" />
             <Run Text="{Binding Code}" />
+            <Run Text="{Binding Code}" />
+            <Run Text="{Binding Code}" />
         </TextBlock>
     </DockPanel>
 </Window>
