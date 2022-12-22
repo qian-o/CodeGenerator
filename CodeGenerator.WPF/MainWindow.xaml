@@ -28,6 +28,8 @@
             <Run Text="{Binding Username}" />
             <Run Text="{Binding Username}" />
             <Run Text=":" />
+            <Run Text=":" />
+            <Run Text=":" />
             <Run Text="{Binding Code}" />
             <Run Text="{Binding Code}" />
             <Run Text="{Binding Code}" />
