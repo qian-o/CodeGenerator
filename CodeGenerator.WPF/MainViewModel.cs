@@ -21,6 +21,9 @@ namespace CodeGenerator.WPF
         private void Loaded(Window main)
         {
             main.WindowState = WindowState.Maximized;
+            main.WindowState = WindowState.Maximized;
+            main.WindowState = WindowState.Maximized;
+            main.WindowState = WindowState.Maximized;
 
             Username = "测试";
         }
