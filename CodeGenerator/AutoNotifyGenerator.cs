@@ -61,7 +61,7 @@ namespace SourceGenerator
 
             foreach (IFieldSymbol fieldSymbol in fields)
             {
-                ProcessField(source, fieldSymbol, attributeSymbol);
+                ProcessField(source, classSymbol.Name, fieldSymbol, attributeSymbol);
                 source.AppendLine();
             }
 
@@ -71,7 +71,7 @@ namespace SourceGenerator
             return source.ToString();
         }
 
-        private void ProcessField(StringBuilder source, IFieldSymbol fieldSymbol, ISymbol attributeSymbol)
+        private void ProcessField(StringBuilder source, string className, IFieldSymbol fieldSymbol, ISymbol attributeSymbol)
         {
             string fieldName = fieldSymbol.Name;
             ITypeSymbol fieldType = fieldSymbol.Type;
@@ -113,6 +113,19 @@ namespace SourceGenerator
                 source.AppendLine($@"               {fieldName} = value;");
                 source.AppendLine($@"               PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(nameof({propertyName})));");
                 source.AppendLine($@"           }}");
+                source.AppendLine($@"       }}");
+
+                source.AppendLine();
+
+                source.AppendLine($@"       public {fieldType} Get{propertyName}() => {propertyName};");
+
+                source.AppendLine();
+
+                source.AppendLine($@"       public {className} Set{propertyName}({fieldType} value)");
+                source.AppendLine($@"       {{");
+                source.AppendLine($@"           {propertyName} = value;");
+                source.AppendLine();
+                source.AppendLine($@"           return this;");
                 source.AppendLine($@"       }}");
             }
         }
