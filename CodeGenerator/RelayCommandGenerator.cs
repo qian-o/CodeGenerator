@@ -42,6 +42,11 @@ namespace SourceGenerator
             _execute = execute;
         }
 
+        public void NotifyCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+
         public bool CanExecute(object parameter = null)
         {
             return true;
