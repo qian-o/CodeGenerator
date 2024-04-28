@@ -1,7 +1,7 @@
-﻿using SourceGenerator;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows;
+using SourceGenerator;
 
 namespace CodeGenerator.WPF
 {
@@ -35,10 +35,7 @@ namespace CodeGenerator.WPF
         [RelayCommand]
         private void ChangedData()
         {
-            this.SetId(Guid.NewGuid())
-                .SetCode("123")
-                .SetUsername("Wx")
-                .SetDescription("描述");
+            SetId(Guid.NewGuid()).SetCode("123").SetUsername("Wx").SetDescription("描述");
 
             Username = "王熙";
             Code = "123456789011123";
